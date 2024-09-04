@@ -7,12 +7,12 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 
-export default function CategoryListSlider() {
+export default function CategoryListSlider({selectcategory}) {
   const [active, setActive] = useState(1);
   const categoryList = [
     {
       id: 1,
-      name: "World",
+      name: "Latest",
     },
     {
       id: 2,
@@ -45,7 +45,8 @@ export default function CategoryListSlider() {
         showsHorizontalScrollIndicator={false}
         data={categoryList}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => onclickcategory(item.id)}>
+          <TouchableOpacity onPress={() => {
+            onclickcategory(item.id), selectcategory(item.name)}}>
             <Text
               style={item.id == active ? styles.selected : styles.unselected}
             >

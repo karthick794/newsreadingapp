@@ -8,8 +8,10 @@ import {
   Dimensions,
 } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export default function TopHeadLine({ newList }) {
+  const navigation=useNavigation()
   return (
     <View style={{ marginTop: 10 }}>
       <FlatList
@@ -17,7 +19,7 @@ export default function TopHeadLine({ newList }) {
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <TouchableOpacity
+          <TouchableOpacity onPress={()=>navigation.navigate('Read',{news:item})}
             style={{ width: Dimensions.get("screen").width * 0.8 }}
           >
             <Image

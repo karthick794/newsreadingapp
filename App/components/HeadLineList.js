@@ -11,14 +11,14 @@ import React from "react";
 export default function HeadLineList({ newList }) {
   return (
     <View>
-      <View style={{ marginTop: 10 }}>
+      <View style={{ marginTop: 10}}>
         <FlatList
           data={newList}
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => (
             <View>
               <TouchableOpacity
-                style={{ display: "flex", flexDirection: "row" }}
+                style={{ display: "flex", flexDirection: "row"}}
               >
                 <Image
                   source={{ uri: item.urlToImage }}
@@ -28,9 +28,8 @@ export default function HeadLineList({ newList }) {
                     borderRadius: 10,
                   }}
                 />
-                <View style={{ marginLeft: 20 }}>
-                  <Text
-                    numberOfLines={4}
+                <View style={{ marginLeft: 10 ,marginRight:10}}>
+                  <Text numberOfLines={4}
                     style={{ fontSize: 20, fontWeight: "bold" }}
                   >
                     {item.title}
